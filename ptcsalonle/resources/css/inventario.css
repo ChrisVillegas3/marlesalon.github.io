@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  body{
+    background-color: #fcf1f3;
+}
+
+@font-face{
+    font-family: fuentesalon;
+    src: url(../../resources/fuentes/fuente.otf);
+  }
+
+  h4, h6{
+    font-family: fuentesalon;
+    font-weight: 900;
+  }
+  b{
+    font-family: fuentesalon;
+    font-weight: 900;
+  }
+  button{
+    font-family: fuentesalon;
+    font-weight: 900;
+  }
+  a{
+    font-family: fuentesalon;
+    font-weight: 900;
+  }
+  p{
+    font-family: fuentesalon;
+    font-weight: 900;
+  }
+  .division{
+    padding-top: 50px;
+  }
+  .division2{
+    padding-top: 30px;
+  }
+
+
+
+@font-face{
+  font-family: fuentesalon2;
+  src: url(../fuentes/roboto3.ttf);
+}
+p{
+  font-family: fuentesalon2;
+  font-weight: 900;
+}

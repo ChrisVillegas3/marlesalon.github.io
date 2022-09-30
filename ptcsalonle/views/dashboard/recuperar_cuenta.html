@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!-- Declaración del idioma para el documento -->
+<html lang="es">
+
+<head>
+    <!-- Codificación de caracteres para el documento -->
+    <meta charset="utf-8">
+    <!-- Título del documento -->
+    <title>Marlé salón - Recuperación de contraseña</title>
+    <!-- Optimización de la página web para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Llamada de archivo como icono -->
+    <link type="image/png" rel="icon" href="../../resources/img/icon.png">
+    <!-- Importación de archivos CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../../resources/css/styles.css">
+    <link rel="stylesheet" href="../../resources/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!--Importacion del archivo css-->
+    <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
+
+</head>
+<nav class="navbar-fixed  red lighten-4"></nav>
+
+<body>
+
+    <main>
+        <div class="container">
+            <a class="btn waves-effect  pink lighten-2" href="index.html" type="submit" name="action">Atrás
+                <i class="material-icons left">navigate_before</i>
+            </a>
+        </div>
+        <!--TITULO-->
+        <div class="section white">
+            <div class="row container">
+                <h3 class="header center-align mtop-30 wow animate__animated animate__fadeInUp">Recuperar contraseña
+                </h3>
+            </div>
+        </div>
+        <!--MODAL TUTORIAL-->
+        <div id="tutorial" class="modal">
+            <div class="modal-content">
+                <h5 class="center-align">¿Cómo recuperar mi contraseña?</h5>
+                <h6 class="center-align">Ingrese su nombre de usuario para recibir un código de verificación en su
+                    correo electrónico.</h6>
+            </div>
+            <div class="modal-footer">
+                <a class="modal-close waves-effect waves-pink btn-flat pink white-text">Entendido</a>
+            </div>
+        </div>
+        <!--MODAL TUTORIAL-->
+        <div id="tutorial2" class="modal">
+            <div class="modal-content">
+                <h5 class="center-align">¿Que código ingresar?</h5>
+                <h6 class="center-align">Ingrese el código de verificación que se le envió al correo proporcionado.</h6>
+            </div>
+            <div class="modal-footer">
+                <a class="modal-close waves-effect waves-pink btn-flat pink white-text">Entendido</a>
+            </div>
+        </div>
+        <!--MODAL TUTORIAL-->
+        <div id="tutorial3" class="modal">
+            <div class="modal-content">
+                <h5 class="center-align">¿Cómo actualizar mi nueva contraseña?</h5>
+                <h6 class="center-align">Ingrese una nueva contraseña y reescribala para confirmar.</h6>
+                <p>La contraseña debe de contener como mínimo una letra mayúscula, una letra minúscula, un número y un caracter especial.</p>
+
+            </div>
+            <div class="modal-footer">
+                <a class="modal-close waves-effect waves-pink btn-flat pink white-text">Entendido</a>
+            </div>
+        </div>
+
+        <!--PROCESO DE RECUPERACIÓN-->
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6 l6">
+                    <form class="card-panel hoverable" id="form-usuario" method="post">
+                        <div class="card-content" style="margin-bottom: 20px;">
+                            <h6 class="card-title">Usuario a recuperar
+                                <a class="modal-trigger" href="#tutorial"><i class="material-icons">info</i></a>
+                            </h6>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="usuario" name="usuario" type="text" class="validate" autocomplete="off"
+                                    required>
+                                <label for="usuario">Nombre de Usuario</label>
+                            </div>
+                        </div>
+                        <button id="enviar-codigo"
+                            class="btn pink lighten-2 waves-effect waves-light center-align white-text text-darken-2"
+                            type="submit">Enviar Código
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+                </div>
+                <!--Card para agregar el codigo recibido-->
+                <div class="col s12 m6 l6">
+                    <form class="card-panel hoverable" id="codigo-form" method="post">
+                        <div class="card-content" style="margin-bottom: 20px;">
+                            <h6 class="card-title">Código
+                                <a class="modal-trigger" href="#tutorial2"><i class="material-icons">info</i></a>
+                            </h6>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">mail</i>
+                                <input disabled id="codigo" name="codigo" type="text" class="validate"
+                                    autocomplete="off" required>
+                                <label for="codigo">Código recibido</label>
+                            </div>
+                        </div>
+                        <input type="number" id="id-usuario" name="id-usuario" class="hide">
+                        <button disabled id="verificar-codigo"
+                            class="btn pink lighten-2 waves-effect waves-light center-align white-text text-darken-2" type="submit"
+                            name="action">Verificar
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+                </div>
+                <!--Card para agregar la nueva contraseña-->
+                <div class="col s12 l12">
+                    <form class="card-panel hoverable" id="contrasenia-form" method="post">
+                        <div class="card-content" style="margin-bottom: 20px;">
+                            <h6 class="card-title">Nueva contraseña
+                                <a class="modal-trigger" href="#tutorial3"><i class="material-icons">info</i></a>
+                            </h6>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">lock</i>
+                                <input disabled required id="pwd" name="pwd" type="password" class="validate"
+                                    oncopy="return false" oncut="return false" onpaste="return false">
+                                <label for="pwd">Escribir nueva contraseña</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">lock</i>
+                                <input disabled required id="pwd2" name="pwd2" type="password" class="validate"
+                                    oncopy="return false" oncut="return false" onpaste="return false">
+                                <label for="pwd2">Confirmar contraseña</label>
+                                <span class="helper-text" data-error="Contraseñas diferentes"></span>
+                            </div>
+                        </div>
+                        <button disabled id="cambiar-contrasenia"
+                            class="btn pink lighten-2 waves-effect waves-light center-align white-text text-darken-2"
+                            type="submit">Guardar
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--Footer de pagina-->
+    <footer class="page-footer  red lighten-4">
+        <div class="container black-text  red lighten-4 center"> © 2022 Marlé Salon
+        </div>
+    </footer>
+    </div>
+    </footer>
+
+    <!-- Pie del documento -->
+    <footer class="page-footer  red lighten-4"> </footer>
+    <!-- Importación de archivos JavaScript -->
+    <script src="../../resources/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../../controllers/components.js"></script>
+    <script type="text/javascript" src="../../controllers/dashboard/recuperar_cuenta.js"></script>
+    <script src="../../resources/js/materialize.min.js"></script>
+    <script src="../../resources/js/countdown.js"></script>
+</body>
+
+</html>

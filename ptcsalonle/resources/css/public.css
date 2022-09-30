@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.parallax-container {
+    height: 300px;
+}
+.contenedor{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.division2{
+    padding-top: 100px;
+  }
+
+  #principio{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    
+}
+
+.division{
+    padding-top: 50px;
+  }
+
+img{
+    width: 300px;
+     padding-top: 100px;
+   }

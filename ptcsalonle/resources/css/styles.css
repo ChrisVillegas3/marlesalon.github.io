@@ -1,0 +1,26 @@
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+    padding-top: 100px;
+  }
+img{
+ width: 300px;
+  padding-top: 100px;
+}
+
+
+@font-face{
+  font-family: fuentesalon2;
+  src: url(../../resources/fuentes/fuente2.otf);
+  }
+  
+  h3{
+  font-family: fuentesalon2;
+  font-weight: 900;
+  }

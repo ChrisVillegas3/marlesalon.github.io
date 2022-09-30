@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- Declaración del idioma para el documento -->
+<html lang="es">
+
+<head>
+    <!-- Codificación de caracteres para el documento -->
+    <meta charset="utf-8">
+    <!-- Título del documento -->
+    <title>Marlé salón - Bienvenido</title>
+    <!-- Optimización de la página web para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Llamada de archivo como icono -->
+    <link type="image/png" rel="icon" href="../../resources/img/icon.png">
+    <!-- Importación de archivos CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../../resources/css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+
+<body>
+    <!-- Encabezado del documento -->
+    <header></header>
+    <!-- Contenido principal del documento -->
+    <main class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="card">
+                    <!-- Título del contenido principal -->
+                    <h3 class="center-align wow animate__animated animate__fadeInUp">Bienvenido a Marlé Salon System</h3>
+                    <!-- Se muestra un saludo según la hora del cliente -->
+                    <div class="row">
+                        <h4 class="center-align grey-text wow animate__animated animate__zoomIn" id="greeting"></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="center-align">
+            <!-- Boton para generar grafico parametrizado de cantiad de citas por mes -->
+            <a onclick="openChart()" class="btn waves-effect pink darken-2 tooltipped wow animate__animated animate__zoomIn" data-tooltip="Crear">
+                Generar gráfico de citas
+                <i class="material-icons left">leaderboard</i>
+            </a>
+        </div>
+        <!-- Se muestran gráficos de acuerdo con algunos datos disponibles en la base de datos -->
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card hoverable">
+                    <!-- Se muestra un gráfico barras del top 5 clientes con mas citas -->
+                    <canvas id="chart1"></canvas>
+                </div>
+            </div>
+            <div class="col s12 m6">
+                <div class="card hoverable">
+                    <!-- Se muestra un gráfico de pastel del porcentaje de productos por marca -->
+                    <canvas id="chart2"></canvas>
+                </div>
+            </div>
+            <div class="col s12 m6">
+                <div class="card hoverable">
+                    <div class="center-align">
+                        <b class="center-align">Top 5 estilistas más solicitadas </b>
+                    </div>
+                    <!-- Se muestra un gráfico polar con los 5 estilistas mas solicitados -->
+                    <canvas id="chart3"></canvas>
+                </div>
+            </div>
+            <div class="col s12 m6">
+                <div class="card hoverable">
+                    <!-- Se muestra un gráfico de dona con el top 5 servicios mas demandados -->
+                    <div class="center-align">
+                        <b class="center-align">Servicios más demandados </b>
+                    </div>
+                    <canvas id="chart4"></canvas>
+                </div>
+            </div>
+            <div class="col s12 m6">
+                <div class="card hoverable">
+                    <!-- Se muestra un gráfico de linea con el porcentaje de pedidos por fecha -->
+                    <canvas id="chart5"></canvas>
+                </div>
+            </div>
+        </div>
+        <!-- Componente Modal para mostrar una caja de diálogo -->
+        <div id="chart-modal" class="modal">
+            <!-- Enlace para cerrar el componente Modal -->
+            <div class="row right">
+                <a class="black-text tooltipped modal-close" data-tooltip="Cerrar">
+                    <i class="small material-icons">close</i>
+                </a>
+            </div>
+            <!-- Contenido del componente Modal -->
+
+            <div class="modal-content">
+                <!-- Título para la caja de diálogo -->
+                <h5 id="modal-title" class="center-align">Cantidad de citas mensuales en rango de fechas</h5>
+                <!-- Formulario para crear o actualizar un registro -->
+                <form class="row" method="post" id="chart-form" enctype="multipart/form-data">
+                    <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+                    <input class="hide" type="number" id="id" name="id">
+                    <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">note_add</i>
+                        <input id="fecha_inicio" type="date" name="fecha_inicio" class="validate" required>
+                        <label for="fecha_inicio">Fecha inicio:</label>
+                    </div>
+                    <!-- Boton de formulario para agregar cantidad -->
+                    <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">iso</i>
+                        <input id="fecha_fin" type="date" name="fecha_fin" class="validate" required>
+                        <label for="fecha_fin">Fecha final:</label>
+                    </div>
+                    <!-- Botones del modal -->
+                    <div class="modal-footer">
+                        <div class="col s12 center-align">
+                            <button type="reset" class="btn waves-effect grey tooltipped"
+                                data-tooltip="Reiniciar">Reiniciar
+                                <i class="material-icons right">autorenew</i>
+                            </button>
+                            <button type="submit" class="btn waves-effect pink tooltipped" data-tooltip="Guardar">Enviar
+                                <i class="material-icons right">save</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <div id="chart-container" class="col s12 m8 offset-m2"></div>
+            </div>
+        </div>
+
+        <!-- Importación de librería para generar gráficos en tiempo real. Para más información https://www.chartjs.org/ -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    </main>
+    <!-- Pie del documento -->
+    <footer class="page-footer red lighten-4"> </footer>
+    <!-- Importación de archivos JavaScript -->
+    <script src="../../resources/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../../controllers/components.js"></script>
+    <script src="../../controllers/dashboard/online.js"></script>
+    <script src="../../controllers/dashboard/main.js"></script>
+    <script src="../../resources/js/countdown.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- Declaración del idioma para el documento -->
+<html lang="es">
+
+<head>
+    <!-- Codificación de caracteres para el documento -->
+    <meta charset="utf-8">
+    <!-- Título del documento -->
+    <title>Marlé salón - Iniciar sesión</title>
+    <!-- Optimización de la página web para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Llamada de archivo como icono -->
+    <link type="image/png" rel="icon" href="../../resources/img/icon.png">
+    <!-- Importación de archivos CSS -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../../resources/css/styles.css">
+    <link rel="stylesheet" href="../../resources/css/login.css">
+    <!--Importacion del archivo css-->
+    <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
+
+</head>
+<nav class="navbar-fixed  red lighten-4"></nav>
+
+<body>
+    <!-- Encabezado del documento -->
+    <main>
+        <!--Logo-->
+        <div class="container">
+            <div class="card horizontal transparent">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="input-field col s6 m6 l7">
+
+                                <div class="card-image ">
+                                    <div class="container center-align">
+
+                                        <img src="../../resources/img/icon.png" width="900">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Formulario de inicio de sesion-->
+                            <div class="input-field col s12 m6 l5">
+                                <div class="container">
+                                    <!-- Título del contenido principal -->
+                                    <h3 class="center-align">Iniciar sesión</h3>
+                                    <!-- Formulario para iniciar sesión -->
+                                    <form class="row" method="post" id="session-form">
+                                        <div class="input-field col s12 m10">
+                                            <i class="material-icons prefix">person</i>
+                                            <input id="alias" type="text" name="alias" class="validate" required autocomplete="off">
+                                            <label for="alias">Alias</label>
+                                        </div>
+                                        <div class="input-field col s12 m10">
+                                            <i class="material-icons prefix">lock</i>
+                                            <input id="clave" type="password" name="clave" class="validate" required oncopy="return false" oncut="return false" onpaste="return false">
+
+                                            <label for="clave">Contraseña</label>
+                                        </div>
+                                        <!-- Boton para ingresar al sistema -->
+                                        <div class="col s12 center-align">
+                                            <button type="submit" class="btn waves-effect pink lighten-1 tooltipped"
+                                                data-tooltip="Ingresar">Ingresar
+                                                <i class="material-icons right">send</i>
+                                            </button>
+                                        </div>
+                                           <!-- Boton para la opcion de recuperar contraseña -->
+                                           
+                                        <div class="col s12 center-align">
+                                            <br>
+                                            <u><a class="black-text" href="recuperar_cuenta.html">¿Olvidó su
+                                                    contraseña?</a></u>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <!--Footer de pagina-->
+    <footer class="page-footer  red lighten-4">
+        <div class="container black-text  red lighten-4 center"> © 2022 Marlé Salon
+        </div>
+    </footer>
+    </div>
+    </footer>
+
+    <!-- Pie del documento -->
+    <footer class="page-footer  red lighten-4"> </footer>
+    <!-- Importación de archivos JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../../controllers/components.js"></script>
+    <script src="../../controllers/dashboard/offline.js"></script>
+    <script src="../../controllers/dashboard/index.js"></script>
+    <script src="../../resources/js/materialize.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+/*::: Boton-Modal:::*/
+
+/*:::Fin Boton-Modal:::*/
+/*:::Ventana Modal:::*/
+#btn-modal2{
+    display: none;
+}
+.container-modal2{
+    width: 100%;
+    
+    height: 100vh;
+    position: fixed;
+    top: 0; left: 0;
+    background-color: rgba(144, 148, 150, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+#btn-modal2:checked ~ .container-modal2{
+    display: flex;
+}
+.content-modal2{
+    width: 100%;
+    max-width: 600px;
+    min-width: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-top: 100px;
+}
+.content-modal2 h3{
+    margin-bottom: 30px;
+}
+
+/*:::bron cerar:::*/
+
+.content-modal2 .btn-cerrar1{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+.content-modal2 .btn-cerrar1 label{
+    padding: 7px 10px;
+ 
+    background-color:  #cf007c;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.content-modal2 .btn-cerrar1 label:hover{
+    background-color: #cf007c;
+}
+
+
+/*:::columnas:::*/
+.inpunt-field{
+    margin-top: 30px;
+    margin-left: 50px;
+
+}
+
+/*:::boton aceptar:::*/
+.content-modal2 .btn-submit {
+    margin-top: 30px;
+	padding: 0 20px;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	color: #fff;
+	background: #cf007c;
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+	transition: .3s ease all;
+}
+.content-modal2 .btn-submit:hover {
+	background: #cf007c;
+}
+
+/*:::Ventana Modal:::*/
+#btn-modal3{
+    display: none;
+}
+.container-modal3{
+    width: 100%;
+   
+    height: 100vh;
+    position: fixed;
+    top: 0; left: 0;
+    background-color: rgba(144, 148, 150, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+#btn-modal3:checked ~ .container-modal3{
+    display: flex;
+}
+.content-modal3{
+    width: 100%;
+    max-width: 600px;
+    min-width: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-top: 100px;
+}
+.content-modal3 h3{
+    margin-bottom: 30px;
+}
+/*:::bron cerar:::*/
+.content-modal3 .btn-cerrar3{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+.content-modal3 .btn-cerrar3 label{
+    padding: 7px 10px;
+ 
+    background-color:  #cf007c;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.content-modal3 .btn-cerrar3 label:hover{
+    background-color: #cf007c;
+}
+/*:::boton aceptar:::*/
+.content-modal3 .btn-submit2 {
+    margin-top: 30px;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    color: #fff;
+    background: #cf007c;
+    border-radius: 3px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+.content-modal3 .btn-submit2:hover {
+    background: #cf007c;
+}
+
+
+@media 
+screen and (max-width:800px) {
+    .content-modal{
+        width: 90%;
+    }
+}
+@font-face{
+    font-family: fuentesalon;
+    src: url(../fuentes/roboto2.ttf);
+    }
+   
+    h4, h6, h3{
+    font-family: fuentesalon;
+    font-weight: 900;
+    }
+
+    .division{
+        padding-top: 50px;
+      }
+      .division2{
+        padding-top: 10px;
+      }

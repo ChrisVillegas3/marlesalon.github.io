@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- Declaración del idioma para el documento -->
+<html lang="es">
+
+<head>
+    <!-- Codificación de caracteres para el documento -->
+    <meta charset="utf-8">
+    <!-- Título del documento -->
+    <title>Marlé salón - Cambiar clave</title>
+    <!-- Optimización de la página web para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Llamada de archivo como icono -->
+    <link type="image/png" rel="icon" href="../../resources/img/icon.png">
+    <!-- Importación de archivos CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../../resources/css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <!-- Encabezado del documento -->
+    <header></header>
+    <!-- Contenido principal del documento -->
+    <main class="container">
+        <!-- Título del contenido principal -->
+        <h4 class="card-panel white center-align black-text wow animate__animated animate__fadeInUp">Cambiar contraseña
+        </h4>
+        <!-- Formulario para actualizar contraseña -->
+        <div class="card">
+            <div class="col s12 center-align">
+                <b>ANTIGUA CONTRASEÑA</b>
+            </div>
+            <form class="row" method="post" id="password-form">
+                <div class="input-field col s12 m6 offset-m3">
+                    <i class="material-icons prefix">lock</i>
+                    <input id="actual" type="password" name="actual" class="validate" required oncopy="return false"
+                        oncut="return false" onpaste="return false">
+                    <label for="actual">Ingrese su contraseña actual</label>
+                </div>
+
+                <div class="col s12 center-align">
+                    <div class="divider"></div>
+                    <b>CONTRASEÑA NUEVA</b>
+                    
+                </div>
+                <div class="input-field col s12 m6 offset-m3">
+                    <i class="material-icons prefix">lock</i>
+                    <!-- Opciones de copiar pegar y autocompletar desactivadas -->
+                    <input id="nueva" type="password" name="nueva" class="validate" required oncopy="return false"
+                        oncut="return false" onpaste="return false">
+                    <label for="nueva">Ingrese nueva contraseña</label>
+                </div>
+                <div class="input-field col s12 m6 offset-m3">
+                    <i class="material-icons prefix">lock</i>
+                    <!-- Opciones de copiar pegar y autocompletar desactivadas -->
+                    <input id="confirmar" type="password" name="confirmar" class="validate" required
+                        oncopy="return false" oncut="return false" onpaste="return false">
+                    <label for="confirmar">Confirme su contraseña</label>
+                </div>
+                <div class="col s12 center-align">
+                    <button type="reset" class="btn waves-effect grey tooltipped" data-tooltip="Reiniciar">Reiniciar
+                        <i class="material-icons right">autorenew</i>
+                    </button>
+                    <button type="submit" class="btn waves-effect pink tooltipped" data-tooltip="Guardar">Guardar
+                        <i class="material-icons right">save</i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!--MODAL TUTORIAL-->
+        <div id="tutorial" class="modal">
+            <div class="modal-content">
+                <h5 class="center-align">¿Cómo actualizar mi nueva contraseña?</h5>
+                <h6 class="center-align">Ingrese una nueva contraseña y reescribala para confirmar.</h6>
+                <p>La contraseña debe de contener como mínimo una letra mayúscula, una letra minúscula, un número y un
+                    caracter especial.</p>
+            </div>
+            <div class="modal-footer">
+                <a class="modal-close waves-effect waves-pink btn-flat pink white-text">Entendido</a>
+            </div>
+        </div>
+    </main>
+    <!-- Pie del documento -->
+    <footer class="page-footer red lighten-4"></footer>
+    <!-- Importación de archivos JavaScript -->
+    <script src="../../resources/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../../controllers/components.js"></script>
+    <script src="../../controllers/dashboard/online.js"></script>
+    <script src="../../controllers/dashboard/password.js"></script>
+    <script src="../../resources/js/countdown.js"></script>
+</body>
+
+</html>

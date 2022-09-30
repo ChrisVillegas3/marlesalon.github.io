@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!-- Declaración del idioma para el documento -->
+<html lang="es">
+
+<head>
+    <!-- Codificación de caracteres para el documento -->
+    <meta charset="utf-8">
+    <!-- Título del documento -->
+    <title>Marlé salón - Productos</title>
+    <!-- Optimización de la página web para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Llamada de archivo como icono -->
+    <link type="image/png" rel="icon" href="../../resources/img/icon.png">
+    <!-- Importación de archivos CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../../resources/css/dashboard.css">
+    <link rel="stylesheet" href="../../resources/css/tablas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+
+<body>
+    <!-- Encabezado del documento -->
+    <header></header>
+    <!-- Contenido principal del documento -->
+    <main class="container">
+        <!-- Título del contenido principal -->
+        <h3 class="center-align wow animate__animated animate__fadeInUp">Administrar Citas</h3>
+
+        <!-- Formulario de búsqueda -->
+        <div class="row">
+            <div class="input-field center-align col s12 m4">
+                <!-- Enlace para abrir una caja de diálogo (modal) al momento de crear un nuevo registro -->
+                <a onclick="openCreate()" class="btn waves-effect  pink lighten-1 tooltipped" data-tooltip="Crear">
+                    Crear Cita
+                    <i class="material-icons left">add_circle</i>
+                </a>
+                 <!-- Enlace para generar un reporte en formato PDF -->
+                 <a onclick="openReport1()" class="btn-floating waves-effect pink darken-2 tooltipped"
+                 data-tooltip="Reporte">
+                 <i class="material-icons">assignment</i>
+             </a>
+            </div>
+            <!-- Formulario de búsqueda -->
+            <form method="post" id="search-form">
+                <div class="input-field col s12 m8 l8">
+                    <i class="material-icons prefix">search</i>
+                    <input id="search" type="text" name="search" required>
+                    <label for="search">Busca un nombre de cliente o servicio</label>
+                </div>
+            </form>
+
+        </div>
+        <!-- Tabla para mostrar los registros existentes -->
+        <!-- Card para la tabla  -->
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="card">
+                    <!-- Tabla para mostrar los registros existentes -->
+                    <table class="highlight responsive-table">
+                        <!-- Cabeza de la tabla para mostrar los títulos de las columnas -->
+                        <thead>
+                            <tr>
+                                <th>CLIENTE</th>
+                                <th>SERVICIO</th>
+                                <th>FECHA</th>
+                                <th>HORA</th>
+                                <th>ESTILISTA</th>
+                                <th>ESTADO</th>
+                                <th>ACCIONES</th>
+
+                            </tr>
+                        </thead>
+                        <!-- Cuerpo de la tabla para mostrar un registro por fila -->
+                        <tbody id="tbody-rows"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Componente Modal para mostrar una caja de diálogo -->
+        <div id="save-modal" class="modal">
+            <!-- Enlace para cerrar el componente Modal -->
+            <div class="row right">
+                <a class="black-text tooltipped modal-close" data-tooltip="Cerrar">
+                    <i class="small material-icons">close</i>
+                </a>
+            </div>
+            <!-- Contenido del componente Modal -->
+            <div class="modal-content">
+                <!-- Título para la caja de diálogo -->
+                <h4 id="modal-title" class="center-align wow animate__animated animate__zoomIn"></h4>
+                <!-- Formulario para crear o actualizar un registro -->
+                <form class="row" method="post" id="save-form" enctype="multipart/form-data">
+                    <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+                    <input class="hide" id="id" name="id">
+                    <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">face</i>
+                        <select id="cliente" name="cliente">
+                        </select>
+                        <label>Cliente</label>
+                    </div>
+
+                    <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">content_cut</i>
+                        <select id="servicio" name="servicio">
+                        </select>
+                        <label>Servicio</label>
+                    </div>
+
+                    <div class="input-field col s12 m6">
+
+                        <i class="material-icons prefix">schedule</i>
+                        <input id="hora" type="time" name="hora" class="validate" required>
+                        <label for="hora">Hora</label>
+                    </div>
+
+                    <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">calendar_month</i>
+                        <input id="fecha" type="date" name="fecha" class="validate" required>
+                        <label for="fecha">Fecha</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">person</i>
+                        <select id="usuario" name="usuario">
+                        </select>
+                        <label>Estilista</label>
+                    </div>
+                    <div class="col s12 m6">
+                        <p>
+                        <div class="switch">
+                            <span>Estado:</span>
+                            <label>
+                                <input id="estado" type="checkbox" name="estado" checked>
+                                <span class="lever"></span>
+                            </label>
+                        </div>
+                        </p>
+                    </div>
+                    <!-- Botones del modal -->
+                    <div class="modal-footer">
+                        <div class="col s12 center-align">
+                            <button type="reset" class="btn waves-effect grey tooltipped"
+                                data-tooltip="Reiniciar">Reiniciar
+                                <i class="material-icons right">autorenew</i>
+                            </button>
+                            <button type="submit" class="btn waves-effect pink tooltipped"
+                                data-tooltip="Guardar">Guardar
+                                <i class="material-icons right">save</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- Pie del documento -->
+    <footer class="page-footer red lighten-4"> </footer>
+    <!-- Importación de archivos JavaScript -->
+    <script src="../../resources/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../../controllers/components.js"></script>
+    <script src="../../controllers/dashboard/online.js"></script>
+    <script src="../../controllers/dashboard/citas.js"></script>
+    <script src="../../resources/js/citas.js"></script>
+    <script src="../../resources/js/countdown.js"></script>
+</body>
+
+</html>

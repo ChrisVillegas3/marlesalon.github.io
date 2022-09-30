@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  body{
+      background-color: #fcf1f3;
+  }
+  @font-face{
+    font-family: fuentesalon;
+    src: url(../../resources/fuentes/fuente.otf);
+    }
+   
+    h4, h6, h3, a, p, button{
+    font-family: fuentesalon;
+    font-weight: 900;
+    }

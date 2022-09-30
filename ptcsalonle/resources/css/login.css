@@ -1,0 +1,48 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+@font-face{
+font-family: fuentesalon;
+src: url(../../resources/fuentes/fuente.otf);
+}
+
+h4, p, a, button{
+font-family: fuentesalon;
+font-weight: 900;
+}
+
+img{
+  padding-right: 0px;
+}
+
+.division{
+padding-top: 50px;
+}
+.division2{
+padding-top: 20px;
+}
+
+
+body{
+background-image: url('../img/fondo1.jpg');
+background-repeat: no-repeat;
+background-size: 100% 100%;
+}
+
+@font-face{
+  font-family: fuentesalon2;
+  src: url(../../resources/fuentes/fuente2.otf);
+  }
+  
+  h3{
+  font-family: fuentesalon2;
+  font-weight: 900;
+  }

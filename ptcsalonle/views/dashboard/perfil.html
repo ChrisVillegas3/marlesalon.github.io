@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- Declaración del idioma para el documento -->
+<html lang="es">
+
+<head>
+    <!-- Codificación de caracteres para el documento -->
+    <meta charset="utf-8">
+    <!-- Título del documento -->
+    <title>Marlé salón - Editar perfil</title>
+    <!-- Optimización de la página web para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Llamada de archivo como icono -->
+    <link type="image/png" rel="icon" href="../../resources/img/icon.png">
+    <!-- Importación de archivos CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../../resources/css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+
+<body>
+    <!-- Encabezado del documento -->
+    <header></header>
+    <!-- Contenido principal del documento -->
+    <main class="container">
+        
+        <!-- Título del contenido principal -->
+        <h4 class="card-panel white center-align black-text wow animate__animated animate__fadeInUp">Editar y ver perfil</h4>
+        <!-- Formulario para cambiar datos personales -->
+       </div>
+
+        <div class="card">
+        <form class="row" method="post" id="profile-form">
+            <div class="input-field col s12 m6">
+                <i class="material-icons prefix">person</i>
+                <input id="nombres" type="text" name="nombres" class="validate" required autocomplete="off">
+                <label for="nombres">Nombres</label>
+            </div>
+            <div class="input-field col s12 m6">
+                <i class="material-icons prefix">person</i>
+                <input id="apellidos" type="text" name="apellidos" class="validate" required autocomplete="off">
+                <label for="apellidos">Apellidos</label>
+            </div>
+            <div class="input-field col s12 m6">
+                <i class="material-icons prefix">email</i>
+                <input id="correo" type="email" name="correo" class="validate" required autocomplete="off">
+                <label for="correo">Correo</label>
+            </div>
+            <div class="input-field col s12 m6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="alias" type="text" name="alias" disabled autocomplete="off">
+                <label for="alias">Alias</label>
+            </div>
+            <div class="col s12 center-align">
+                <button type="submit" class="btn waves-effect pink tooltipped" data-tooltip="Guardar">Guardar
+                </button>
+            </div>
+        </form>
+        <p></p>
+    </div>
+    </main>
+    <!-- Pie del documento -->
+    <footer class="page-footer red lighten-4"></footer>
+    <!-- Importación de archivos JavaScript -->
+    <script src="../../resources/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../../controllers/components.js"></script>
+    <script src="../../controllers/dashboard/online.js"></script>
+    <script src="../../controllers/dashboard/profile.js"></script>
+    <script src="../../resources/js/countdown.js"></script>
+</body>
+
+</html>
