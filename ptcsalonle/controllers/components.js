@@ -5,7 +5,7 @@
 /*
 *   Constante para establecer la ruta del servidor.
 */
-const SERVER = 'http://localhost/ptcsalonle/api/';
+const SERVER = 'https://chrisvillegas3.github.io/marlesalon.github.io/ptcsalonle/api/';
 
 /*
 *   Función para obtener todos los registros disponibles en los mantenimientos de tablas (operación read).
