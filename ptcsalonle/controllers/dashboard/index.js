@@ -5,8 +5,8 @@ const API_USUARIOS = SERVER + 'dashboard/usuarios.php?action=';
 document.addEventListener('DOMContentLoaded', function () {
     // Petición para consultar si existen usuarios registrados.
     fetch(API_USUARIOS + 'readUsers', {
-  headers: {
-    'Access-Control-Allow-Origin':'*'
+ headers: {
+    'Content-Type': 'text/plain'
   },
         method: 'get'
     }).then(function (request) {
