@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Petición para consultar si existen usuarios registrados.
     fetch(API_USUARIOS + 'readUsers', {
  headers: {
-    'Content-Type': 'text/plain'
+    'Content-Type': 'text/plain',
+     'Access-Control-Allow-Origin':'*'
   },
         method: 'get'
     }).then(function (request) {
