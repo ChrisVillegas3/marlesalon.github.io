@@ -17,6 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </div>
     `;
-    document.querySelector('header').innerHTML = header;
+    document.querySelector('nav').innerHTML = header;
     document.querySelector('footer').innerHTML = footer;
 });
